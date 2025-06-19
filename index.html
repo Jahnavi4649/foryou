@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>skibidisea</title>
+</head>
+
+<body>
+    <div class="bg-wrapper">
+        <img src="waves.gif" alt="pixel sea" class="flipped-bg" />
+    </div>
+    <div class="container">
+        <h1>I left a message for you in the sea...</h1>
+        <div class="bottle-container" onclick="showMessage()">
+            <img src="bottle.png" alt="Message in a Bottle" class="bottle">
+        </div>
+        <div class="message-box" id="message">
+            <div class="message-content">
+                <p>
+                    Sometimes I get overwhelmed and be a bitch.
+                    And I hate that too. Because you’re the one person I never want to hurt.
+                    Your are my best friend, my boyfriend and my sugar daddy.
+                    I'm dumb and but you aren't dumb. So forgive me please.
+                    I regret my actions.
+                    You mean a lot to me!!!
+                    I'm really sorry...and I love you very much..I really do.
+                </p>
+                <button onclick="sendHugs()">Send Hugs</button>
+            </div>
+        </div>
+    </div>
+    <div id="hearts-container"></div>
+
+
+
+    <script>
+        function showMessage() {
+            document.getElementById("message").style.display = "flex";
+        }
+
+        function sendHugs() {
+            const container = document.getElementById('hearts-container');
+            for (let i = 0; i < 30; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = '-20px';
+                heart.style.animationDuration = (2 + Math.random() * 2) + 's';
+                container.appendChild(heart);
+
+                // Remove after animation
+                setTimeout(() => {
+                    container.removeChild(heart);
+                }, 4000);
+            }
+
+
+        }
+    </script>
+
+
+</body>
+
+</html>

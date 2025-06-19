@@ -1,0 +1,166 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    text-shadow: 1px 1px 0 #00000030;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.flipped-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: rotate(180deg);
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.bottle-container {
+    width: 250px;
+    margin: 25rem auto;
+    animation: float 3s ease-in-out infinite;
+    cursor: pointer;
+}
+
+.bottle {
+    width: 100%;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-40px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* .message-box {
+    display: none;
+    background: #fff7f0;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+} */
+
+#message {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.message-content {
+    background-image: url('vintage-paper.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 80%;
+    height: 40%;
+    max-width: 600px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    text-shadow: 1px 1px 0 #00000030;
+    color: #3e2d1c;
+    border: 2px solid #d4c0a0;
+    position: relative;
+    border-radius: 12px;
+    line-height: 1.6;
+}
+
+button {
+    height: 60px;
+    width: 200px;
+    background: #ff69b4;
+    color: #fff;
+    border: 3px solid #000;
+    font-family: 'Press Start 2P', cursive;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 4px 4px #000;
+    cursor: pointer;
+
+}
+
+button:hover {
+    background-color: #e88fa2;
+}
+
+img {
+    image-rendering: pixelated;
+}
+
+h1 {
+    margin: 12rem auto;
+}
+
+#hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.heart {
+    width: 100px;
+    height: 100px;
+    background-image: url('pixel-heart.png');
+    background-size: cover;
+    position: absolute;
+    animation: fall 3s linear infinite;
+    opacity: 0.9;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-20px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
